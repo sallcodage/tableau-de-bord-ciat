@@ -1,10 +1,4 @@
-# Déploiement en un clic sur Render (Blueprint) : New > Blueprint > choisir ce dépôt GitHub
-databases:
-  - name: ciat-db
-    plan: free
-    databaseName: ciat
-    user: ciat
-
+# Déploiement sur Render (Blueprint) — base PostgreSQL hébergée chez Neon
 services:
   - type: web
     name: tableau-de-bord-ciat
@@ -16,14 +10,12 @@ services:
       - key: PYTHON_VERSION
         value: 3.12.7
       - key: DATABASE_URL
-        fromDatabase:
-          name: ciat-db
-          property: connectionString
+        sync: false   # connection string Neon, à saisir dans Render
       - key: DJANGO_SECRET_KEY
         generateValue: true
       - key: DJANGO_DEBUG
         value: "False"
       - key: GEMINI_API_KEY
-        sync: false   # à saisir dans le tableau de bord Render
+        sync: false
       - key: DEMO_PASSWORD
         sync: false

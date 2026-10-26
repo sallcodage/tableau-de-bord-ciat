@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Méthodologie{% endblock %}
+{% block container_class %}narrow{% endblock %}
+{% block content %}
+<div class="card doc-rendu">
+  <h1>Méthodologie</h1>
+  <p>Ce tableau de bord suit le parcours des projets de l'incubateur du CIAT, de l'idée reçue au projet lancé.
+    <strong>Les données actuelles sont fictives</strong> : elles ont été générées pour la démonstration (voir <code>data/README.md</code>).</p>
+
+  <h2>L'ISEP Amadou Trawaré en bref (données réelles)</h2>
+  <table>
+    <tr><th>Élément</th><th>Information</th></tr>
+    <tr><td>Statut</td><td>Établissement public d'enseignement supérieur professionnel, créé par décret en juin 2016</td></tr>
+    <tr><td>Mission</td><td>Former des techniciens supérieurs en deux ans, en alternance école-entreprise</td></tr>
+    <tr><td>Départements</td><td>Technologies de l'information et de la communication (TIC), Automobile</td></tr>
+    <tr><td>Filières TIC</td><td>Développement Back-End, Développement Front-End, Analyse de Performance Digitale, Administration des Bases de Données, Administration Système, Sécurité et Cloud, Réseaux, Sécurité et IoT</td></tr>
+    <tr><td>Filières Automobile</td><td>Électromécanique Automobile, Électricité et Électronique Automobile, Froid et Climatisation Automobile et Industriel, Carrosserie et Peinture Automobile</td></tr>
+    <tr><td>Nouvelles filières annoncées (2025-2026)</td><td>Intelligence artificielle, cybersécurité, objets connectés, efficacité énergétique, maintenance biomédicale et industries pharmaceutiques</td></tr>
+    <tr><td>Effectif (2025)</td><td>1 194 apprenants pour une capacité prévue de 400 par an ; 586 diplômés attendus (bacheliers 2023), 608 apprenants en 1re année (bacheliers 2024)</td></tr>
+    <tr><td>Adresse</td><td>Pôle urbain de Diamniadio, Cité du Savoir, Dakar</td></tr>
+  </table>
+  <p class="small muted">Sources : <a href="https://guindima.sn/educa/etablissement/institut-superieur-denseignement-professionnel-de-diamniadio/" target="_blank" rel="noopener">Guindima, fiche de l'ISEP de Diamniadio</a> ·
+    <a href="https://fr.allafrica.com/stories/202509240276.html" target="_blank" rel="noopener">AllAfrica / APS, 24 septembre 2025</a>.
+    Le site officiel isepdiamniadio.sn redirige vers la plateforme e-learning ; aucune donnée publique n'existe sur l'activité du CIAT.</p>
+  <p>Dans l'application, ces données réelles servent à : classer les porteurs par <strong>filière ISEP</strong> d'origine (filtre et graphique),
+    rapporter le nombre de porteurs apprenants à l'<strong>effectif réel</strong> de l'institut, et limiter les nouvelles filières à l'appel 2027.
+    Les projets, jalons, financements et partenariats restent <strong>fictifs</strong> jusqu'à l'import des données du CIAT.</p>
+
+  <h2>Définition des indicateurs</h2>
+  <table>
+    <tr><th>Indicateur</th><th>Calcul</th></tr>
+    <tr><td>Idées reçues</td><td>Projets déposés sur le périmètre filtré</td></tr>
+    <tr><td>Taux de sélection</td><td>Projets incubés / idées reçues</td></tr>
+    <tr><td>Taux de prototypes</td><td>Projets incubés ayant une date de prototype / projets incubés</td></tr>
+    <tr><td>Taux de réussite</td><td>Projets sortis / (sortis + abandonnés) — définitif seulement pour une cohorte terminée</td></tr>
+    <tr><td>Taux de jalons en retard</td><td>(Jalons réalisés après l'échéance + jalons échus non réalisés) / jalons échus suivis. Les jalons non atteints d'un projet terminé ne sont pas comptés.</td></tr>
+    <tr><td>Projet en retard</td><td>Projet en incubation avec au moins un jalon échu non réalisé</td></tr>
+    <tr><td>Financements obtenus</td><td>Somme des financements au statut « obtenu », en FCFA</td></tr>
+    <tr><td>Partenariats actifs</td><td>Partenariats au statut « actif » : institutionnels du CIAT et liés aux projets filtrés</td></tr>
+    <tr><td>Part des femmes</td><td>Idées dont le porteur principal est une femme / idées reçues</td></tr>
+    <tr><td>Part de porteurs ISEP</td><td>Idées portées par un apprenant ou un diplômé de l'ISEP (filière renseignée) / idées reçues</td></tr>
+    <tr><td>Mobilisation des apprenants</td><td>Idées de l'appel 2026 portées par des apprenants / effectif de l'ISEP (1 194 en 2025)</td></tr>
+  </table>
+  <p class="small muted">Les filtres s'appliquent aux projets (date de dépôt, cohorte, domaine, statut, genre, profil, région, porteur) ; jalons, financements et partenariats suivent les projets retenus.</p>
+
+  <h2>Dictionnaire des données (résumé)</h2>
+  <table>
+    <tr><th>Table</th><th>Contenu</th></tr>
+    <tr><td>Cohorte</td><td>Année de l'appel, dates de début et de fin d'incubation</td></tr>
+    <tr><td>Porteur</td><td>Code anonyme, prénom, nom, genre, tranche d'âge, profil (apprenant, diplômé, externe), filière ISEP, région</td></tr>
+    <tr><td>Projet</td><td>Code, titre, domaine, cohorte, porteur, date de dépôt, présélection, sélection, note du comité, date de prototype, statut, progression, mentor, emplois créés</td></tr>
+    <tr><td>Jalon</td><td>Projet, titre, échéance, date de réalisation (état calculé)</td></tr>
+    <tr><td>Financement</td><td>Projet, organisme, type, montant FCFA, date, statut</td></tr>
+    <tr><td>Partenariat</td><td>Partenaire, type, projet (facultatif), objet, date, statut</td></tr>
+    <tr><td>Requête</td><td>Journal des questions posées à l'IA (traçabilité)</td></tr>
+  </table>
+
+  <h2>Usage de l'IA générative</h2>
+  <ul>
+    <li><strong>Assistant</strong> : Gemini traduit une question en requête structurée (mesure, regroupement, filtres). L'application valide cette requête contre une liste blanche et calcule elle-même le résultat. Le modèle ne voit aucune donnée et ne produit aucun chiffre.</li>
+    <li><strong>Note de synthèse</strong> : Gemini rédige une note à partir des indicateurs agrégés d'une cohorte (aucun nom transmis). Chaque nombre cité est comparé automatiquement aux données fournies.</li>
+    <li>Sans clé API, l'assistant fonctionne avec un analyseur à règles et la note n'est pas disponible.</li>
+  </ul>
+
+  <h2>Protection des données</h2>
+  <ul>
+    <li>Le profil Direction ne voit que des codes anonymes (P-0042) ; seuls les coordonnateurs voient les noms.</li>
+    <li>Les exports reprennent la même règle.</li>
+    <li>Cadre de référence : loi sénégalaise n° 2008-12 sur la protection des données à caractère personnel.</li>
+  </ul>
+</div>
+{% endblock %}

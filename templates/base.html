@@ -1,0 +1,57 @@
+{% load static %}<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Tableau de bord{% endblock %} · CIAT — ISEP Amadou Trawaré</title>
+  <meta name="description" content="Tableau de bord décisionnel du Centre d'Innovation, d'Application et de Transfert de l'ISEP Amadou Trawaré de Diamniadio.">
+  <link rel="icon" href="{% static 'img/logo.svg' %}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  {% if user.is_authenticated %}
+  <div class="ia-banner">
+    Données fictives de démonstration.
+    {% if ia_active %}Assistant et notes de synthèse : IA Gemini, chiffres calculés par l'application.{% else %}<strong>IA en mode règles (sans clé API)</strong>.{% endif %}
+    <a href="{% url 'pilotage:methodologie' %}">Méthodologie</a>
+  </div>
+  {% endif %}
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="{% url 'pilotage:dashboard' %}">
+        <img src="{% static 'img/logo.svg' %}" alt="">
+        <span>Pilotage du CIAT<small>ISEP Amadou Trawaré · Diamniadio</small></span>
+      </a>
+      {% if user.is_authenticated %}
+      <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('ouvert')">☰</button>
+      <nav class="nav">
+        {% with n=request.resolver_match.url_name %}
+        <a href="{% url 'pilotage:dashboard' %}" class="{% if n == 'dashboard' %}actif{% endif %}">Tableau de bord</a>
+        <a href="{% url 'pilotage:cohortes' %}" class="{% if 'cohorte' in n %}actif{% endif %}">Cohortes</a>
+        <a href="{% url 'pilotage:projets' %}" class="{% if 'projet' in n %}actif{% endif %}">Projets</a>
+        <a href="{% url 'pilotage:assistant' %}" class="{% if n == 'assistant' %}actif{% endif %}">Assistant IA</a>
+        {% if user.peut_saisir %}<a href="{% url 'pilotage:donnees' %}" class="{% if n == 'donnees' %}actif{% endif %}">Données</a>{% endif %}
+        <a href="{% url 'accounts:profil' %}" class="{% if n == 'profil' %}actif{% endif %}" title="{{ user.get_role_display }}">{{ user.first_name|default:user.username }}</a>
+        {% endwith %}
+        <form method="post" action="{% url 'logout' %}">{% csrf_token %}<button type="submit">Déconnexion</button></form>
+      </nav>
+      {% endif %}
+    </div>
+  </header>
+
+  <main class="container {% block container_class %}{% endblock %}">
+    {% for m in messages %}<div class="alert alert-{{ m.tags }}" role="status">{{ m }}</div>{% endfor %}
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="pied">
+    CIAT — Centre d'Innovation, d'Application et de Transfert · ISEP Amadou Trawaré de Diamniadio<br>
+    Pôle urbain de Diamniadio, Cité du Savoir · Départements TIC et Automobile
+  </footer>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

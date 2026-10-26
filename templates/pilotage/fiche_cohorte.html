@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static ciat_tags %}
+{% block title %}Fiche {{ cohorte.nom }}{% endblock %}
+{% block content %}
+<div class="row spread no-print" style="margin-bottom:10px">
+  <a class="small" href="{% url 'pilotage:cohortes' %}">← Cohortes</a>
+  <div class="row">
+    <a class="btn btn-ghost btn-sm" href="{% url 'pilotage:export_excel' %}?cohorte={{ cohorte.annee }}">Excel</a>
+    {% if note %}
+      <form method="post" action="{% url 'pilotage:export_pdf' %}?cohorte={{ cohorte.annee }}">{% csrf_token %}
+        <input type="hidden" name="note" value="{{ note }}"><button class="btn btn-sm">PDF avec la note</button></form>
+    {% else %}
+      <a class="btn btn-sm" href="{% url 'pilotage:export_pdf' %}?cohorte={{ cohorte.annee }}">PDF</a>
+    {% endif %}
+  </div>
+</div>
+<h1 style="margin-bottom:2px">Fiche de synthèse — {{ cohorte.nom }}</h1>
+<p class="muted">Incubation du {{ cohorte.date_debut|date:"d/m/Y" }} au {{ cohorte.date_fin|date:"d/m/Y" }}</p>
+
+<div class="grid grid-4">
+  <div class="card kpi"><div class="val">{{ k.idees }}</div><div class="lib">Idées reçues</div></div>
+  <div class="card kpi"><div class="val">{{ k.selectionnes }}</div><div class="lib">Incubés ({{ k.taux_selection|nombre }} %)</div></div>
+  <div class="card kpi"><div class="val">{{ k.prototypes }}</div><div class="lib">Prototypes</div></div>
+  <div class="card kpi"><div class="val">{{ k.montant_obtenu|fcfa }}</div><div class="lib">Financements obtenus</div></div>
+</div>
+
+<div class="grid grid-2" style="margin-top:16px;align-items:start">
+  <div class="card faits">
+    <h3>Faits marquants (calculés)</h3>
+    {% if faits %}<ul>{% for f in faits %}<li>{{ f }}</li>{% endfor %}</ul>{% else %}<p class="small">Pas encore assez de données.</p>{% endif %}
+  </div>
+  <div class="card">
+    <div class="carte-titre"><h3>Note de synthèse pour la direction</h3><span class="badge">IA générative</span></div>
+    {% if note %}
+      <div style="white-space:pre-line;margin-top:10px">{{ note }}</div>
+      <p class="small muted" style="margin-top:10px">Rédigée par Gemini à partir des seuls indicateurs ci-contre (aucune donnée nominative transmise). À relire avant diffusion.</p>
+    {% else %}
+      <p class="aide">L'IA rédige une note de 3 paragraphes (résultats, points d'attention, recommandations) à partir des indicateurs calculés. Chaque chiffre cité est vérifié automatiquement.</p>
+      {% if erreur %}<div class="alert alert-warning">{{ erreur }}</div>{% endif %}
+      <form method="post">{% csrf_token %}<button class="btn" type="submit" onclick="this.disabled=true;this.textContent='Rédaction…';this.form.submit()">Rédiger la note</button></form>
+    {% endif %}
+  </div>
+</div>
+
+<div class="grid grid-2" style="margin-top:16px">
+  <div class="card"><div class="carte-titre"><h3>Parcours des projets</h3><button class="btn-png" data-png="g-entonnoir">PNG</button></div><div class="chart-box"><canvas id="g-entonnoir"></canvas></div></div>
+  <div class="card"><div class="carte-titre"><h3>Domaines</h3><button class="btn-png" data-png="g-domaines">PNG</button></div><div class="chart-box"><canvas id="g-domaines"></canvas></div></div>
+</div>
+
+<div class="card table-wrap" style="margin-top:16px">
+  <h3>Projets incubés</h3>
+  <table>
+    <tr><th>Projet</th><th>Domaine</th><th>Statut</th><th>Progression</th><th>Mentor</th></tr>
+    {% for p in incubes %}
+      <tr><td><a href="{% url 'pilotage:fiche_projet' p.code %}">{{ p.titre }}</a><br><span class="muted small">{{ p.code }}</span></td><td class="small">{{ p.domaine_court }}</td>
+        <td><span class="badge statut-{{ p.statut }}">{{ p.get_statut_display }}</span></td>
+        <td><div class="row" style="gap:8px;flex-wrap:nowrap"><div class="barre"><span style="width:{{ p.progression }}%"></span></div><span class="small">{{ p.progression }} %</span></div></td>
+        <td class="small">{{ p.mentor }}</td></tr>
+    {% empty %}<tr><td colspan="5" class="muted small">Aucun projet incubé pour l'instant (appel en cours d'évaluation).</td></tr>{% endfor %}
+  </table>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/chart.umd.min.js' %}"></script>
+<script src="{% static 'js/graphiques.js' %}"></script>
+<script>
+const S = {{ series_json|safe }};
+CIAT.entonnoir("g-entonnoir", S.entonnoir);
+CIAT.domaines("g-domaines", S.domaines);
+</script>
+{% endblock %}

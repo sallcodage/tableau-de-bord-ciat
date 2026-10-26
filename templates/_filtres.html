@@ -1,0 +1,41 @@
+{% load ciat_tags %}
+<form method="get" class="filtres card" id="filtres">
+  <div class="filtres-grille">
+    <div><label for="f-cohorte">Cohorte</label>
+      <select id="f-cohorte" name="cohorte"><option value="">Toutes</option>
+        {% for a in choix.cohortes %}<option value="{{ a }}" {% coche 'cohorte' a %}>{{ a }}</option>{% endfor %}</select></div>
+    <div><label for="f-domaine">Domaine</label>
+      <select id="f-domaine" name="domaine"><option value="">Tous</option>
+        {% for v, l in choix.domaines %}<option value="{{ v }}" {% coche 'domaine' v %}>{{ l }}</option>{% endfor %}</select></div>
+    <div><label for="f-statut">Statut</label>
+      <select id="f-statut" name="statut"><option value="">Tous</option>
+        {% for v, l in choix.statuts %}<option value="{{ v }}" {% coche 'statut' v %}>{{ l }}</option>{% endfor %}</select></div>
+    <div><label for="f-genre">Genre</label>
+      <select id="f-genre" name="genre"><option value="">Tous</option>
+        <option value="F" {% coche 'genre' 'F' %}>Femmes</option><option value="H" {% coche 'genre' 'H' %}>Hommes</option></select></div>
+    <div><label for="f-profil">Profil du porteur</label>
+      <select id="f-profil" name="profil"><option value="">Tous</option>
+        {% for v, l in choix.profils %}<option value="{{ v }}" {% coche 'profil' v %}>{{ l }}</option>{% endfor %}</select></div>
+    <div><label for="f-region">Région</label>
+      <select id="f-region" name="region"><option value="">Toutes</option>
+        {% for r in choix.regions %}<option value="{{ r }}" {% coche 'region' r %}>{{ r }}</option>{% endfor %}</select></div>
+    <div><label for="f-filiere">Filière ISEP du porteur</label>
+      <select id="f-filiere" name="filiere"><option value="">Toutes</option>
+        <option value="dep:TIC" {% coche 'filiere' 'dep:TIC' %}>Tout le département TIC</option>
+        <option value="dep:Automobile" {% coche 'filiere' 'dep:Automobile' %}>Tout le département Automobile</option>
+        {% for dep, groupe in choix.filieres %}<optgroup label="{{ dep }}">{% for v, l in groupe %}<option value="{{ v }}" {% coche 'filiere' v %}>{{ l }}</option>{% endfor %}</optgroup>{% endfor %}
+      </select></div>
+    <div><label for="f-du">Dépôt du</label><input id="f-du" type="date" name="du" value="{{ filtres.du|date:'Y-m-d' }}"></div>
+    <div><label for="f-au">au</label><input id="f-au" type="date" name="au" value="{{ filtres.au|date:'Y-m-d' }}"></div>
+    {% if user.voit_noms %}
+    <div><label for="f-porteur">Porteur (nom ou code)</label><input id="f-porteur" type="search" name="porteur" value="{{ filtres.porteur }}" placeholder="ex. Diop, P-0042"></div>
+    {% endif %}
+  </div>
+  <div class="row spread" style="margin-top:10px">
+    <span class="small muted">{{ filtres.description }}</span>
+    <div class="row">
+      {% if filtres.actifs %}<a class="btn btn-ghost btn-sm" href="?">Réinitialiser</a>{% endif %}
+      <button class="btn btn-sm" type="submit">Appliquer</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Mon profil{% endblock %}
+{% block container_class %}narrow{% endblock %}
+{% block content %}
+<div class="card">
+  <h1>Mon profil</h1>
+  <p><span class="badge">{{ user.get_role_display }}</span>
+    {% if user.voit_noms %}<span class="muted small">Accès aux données nominatives et à l'import.</span>{% else %}<span class="muted small">Accès aux analyses, données anonymisées.</span>{% endif %}</p>
+  <form method="post">{% csrf_token %}
+    {% for field in form %}{% include "_field.html" %}{% endfor %}
+    <button class="btn" type="submit">Enregistrer</button>
+  </form>
+</div>
+{% endblock %}

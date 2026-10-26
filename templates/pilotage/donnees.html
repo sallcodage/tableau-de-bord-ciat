@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Données et qualité{% endblock %}
+{% block content %}
+<h1 style="margin-bottom:2px">Données et qualité</h1>
+<p class="muted">Contrôle de cohérence de la base et import des fichiers CSV.</p>
+
+<div class="grid grid-4">
+  <div class="card kpi"><div class="val">{{ score }} %</div><div class="lib">Contrôles sans anomalie</div></div>
+  {% for nom, n in volumes.items %}<div class="card kpi"><div class="val">{{ n }}</div><div class="lib">{{ nom }}</div></div>{% endfor %}
+</div>
+
+<div class="card table-wrap" style="margin-top:16px">
+  <h3>Contrôles de qualité</h3>
+  <table>
+    <tr><th>Règle</th><th>Gravité</th><th>Anomalies</th><th>Exemples</th></tr>
+    {% for c in controles %}
+      <tr><td>{{ c.regle }}</td><td class="small">{{ c.gravite }}</td>
+        <td>{% if c.nb %}<span class="badge badge-rouge">{{ c.nb }}</span>{% else %}<span class="badge badge-vert">0</span>{% endif %}</td>
+        <td class="small">{% for e in c.exemples %}{% if e.code %}<a href="{% url 'pilotage:fiche_projet' e.code %}">{{ e.texte }}</a>{% else %}{{ e.texte }}{% endif %}{% if not forloop.last %}, {% endif %}{% endfor %}</td></tr>
+    {% endfor %}
+  </table>
+  <p class="small muted">Corrigez les anomalies dans l'administration (menu Admin) ou réimportez un fichier corrigé.</p>
+</div>
+
+<div class="grid grid-2" style="margin-top:16px;align-items:start">
+  <form method="post" enctype="multipart/form-data" class="card">{% csrf_token %}
+    <h3>Importer des fichiers CSV</h3>
+    <p class="aide">Séparateur « ; », encodage UTF-8, dates AAAA-MM-JJ. L'import est annulé en entier si un fichier est mal formé.</p>
+    {% for f in fichiers %}
+      <div class="field"><label for="f-{{ f }}">{{ f }}.csv <a class="small" href="{% url 'pilotage:modele_csv' f %}">(modèle)</a></label><input id="f-{{ f }}" type="file" name="{{ f }}" accept=".csv"></div>
+    {% endfor %}
+    <label class="checkbox"><input type="checkbox" name="remplacer" value="1"> <span>Remplacer toutes les données existantes</span></label>
+    <button class="btn" type="submit" style="margin-top:10px">Importer</button>
+  </form>
+  <div class="card">
+    <h3>Saisie et corrections</h3>
+    <p class="small">Projets, jalons, financements et partenariats se modifient dans l'administration, avec recherche et filtres.</p>
+    <a class="btn btn-ghost" href="{% url 'admin:pilotage_projet_changelist' %}">Ouvrir l'administration</a>
+    <p class="small muted" style="margin-top:14px">Le dictionnaire des données et la définition des indicateurs sont sur la page <a href="{% url 'pilotage:methodologie' %}">Méthodologie</a>.</p>
+  </div>
+</div>
+{% endblock %}

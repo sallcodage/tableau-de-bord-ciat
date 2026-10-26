@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static ciat_tags %}
+{% block title %}Assistant IA{% endblock %}
+{% block content %}
+<h1 style="margin-bottom:2px">Interroger les données</h1>
+<p class="muted">Posez une question en français. L'IA traduit la question en requête, l'application calcule les chiffres.</p>
+
+<div class="grid" style="grid-template-columns: 1fr 300px; align-items:start" id="ia-grille">
+  <div>
+    <form method="post" class="card" id="form-q">{% csrf_token %}
+      <div class="row" style="flex-wrap:nowrap">
+        <input type="text" name="question" value="{{ question }}" maxlength="500" placeholder="Ex. : combien de projets incubés par domaine en 2025 ?" required style="flex:1">
+        <button class="btn" type="submit" id="envoyer">Analyser</button>
+      </div>
+      <div class="suggestions">{% for e in exemples %}<button type="button" data-q="{{ e }}">{{ e }}</button>{% endfor %}</div>
+    </form>
+
+    {% if resultat %}
+    <div class="card" style="margin-top:16px">
+      <p class="reponse-ia" style="margin-top:0">{{ resultat.texte|gras }}</p>
+      {% if resultat.lignes_fmt %}
+        <div class="grid grid-2" style="align-items:start">
+          <div class="table-wrap"><table>
+            <tr><th>{{ resultat.libelle_groupe }}</th><th style="text-align:right">Valeur</th></tr>
+            {% for l in resultat.lignes_fmt %}<tr><td>{{ l.groupe }}</td><td style="text-align:right">{{ l.valeur }}</td></tr>{% endfor %}
+          </table></div>
+          <div><div class="carte-titre"><span></span><button class="btn-png" data-png="g-reponse">PNG</button></div><div class="chart-box"><canvas id="g-reponse"></canvas></div></div>
+        </div>
+      {% endif %}
+      <details style="margin-top:12px">
+        <summary class="small muted" style="cursor:pointer">Comment ce résultat a été obtenu</summary>
+        <p class="small">Interprétation par {% if resultat.mode == "gemini" %}Gemini{% elif resultat.mode == "regles" %}l'analyseur à règles (sans IA){% else %}—{% endif %}, validée puis exécutée par l'application ({{ resultat.duree_ms }} ms). Requête structurée :</p>
+        <pre class="small" style="background:var(--fond);padding:10px;border-radius:8px;overflow:auto">{{ resultat.spec|pprint }}</pre>
+      </details>
+    </div>
+    {% endif %}
+  </div>
+
+  <aside class="card">
+    <h3>Mes dernières questions</h3>
+    <ul style="padding-left:18px;margin:0">
+      {% for r in historique %}<li class="small" style="margin:6px 0"><a href="#" data-q="{{ r.question }}">{{ r.question }}</a>{% if not r.succes %} <span class="badge badge-ambre">non traitée</span>{% endif %}</li>
+      {% empty %}<li class="small muted">Aucune question pour l'instant.</li>{% endfor %}
+    </ul>
+    <p class="small muted" style="margin-top:14px">Le modèle ne reçoit que votre question, jamais les données des porteurs. Il ne produit ni SQL ni chiffre.</p>
+  </aside>
+</div>
+<style>@media (max-width:900px){#ia-grille{grid-template-columns:1fr!important}}</style>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/chart.umd.min.js' %}"></script>
+<script src="{% static 'js/graphiques.js' %}"></script>
+<script>
+const form = document.getElementById("form-q"), champ = form.querySelector("input[name=question]");
+document.querySelectorAll("[data-q]").forEach(b => b.addEventListener("click", e => { e.preventDefault(); champ.value = b.dataset.q; form.requestSubmit(); }));
+form.addEventListener("submit", () => { const b = document.getElementById("envoyer"); b.disabled = true; b.textContent = "Analyse…"; });
+{% if resultat.graphique %}
+const G = {{ resultat.graphique|safe }};
+if (G.type !== "aucun" && G.labels.length) {
+  const camembert = G.type === "camembert";
+  const couleurs = [CIAT.C.brun, CIAT.C.caramel, CIAT.C.brun2, CIAT.C.sable, CIAT.C.vert, CIAT.C.ambre, CIAT.C.gris];
+  CIAT.graphique("g-reponse", {
+    type: camembert ? "doughnut" : (G.type === "ligne" ? "line" : "bar"),
+    data: { labels: G.labels, datasets: [{ label: G.mesure, data: G.valeurs, borderColor: CIAT.C.brun,
+      backgroundColor: camembert ? couleurs : CIAT.C.caramel, borderRadius: camembert ? 0 : 6, tension: .25 }] },
+    options: camembert ? { plugins: { legend: { position: "bottom" } } }
+      : { scales: { y: { beginAtZero: true, ticks: { precision: 0 }, grid: { color: CIAT.C.grille } }, x: { grid: { display: false } } }, plugins: { legend: { display: false } } }
+  });
+}
+{% endif %}
+</script>
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static ciat_tags %}
+{% block title %}Tableau de bord{% endblock %}
+{% block content %}
+<div class="row spread" style="margin-bottom:14px">
+  <div>
+    <h1 style="margin-bottom:2px">Tableau de bord décisionnel</h1>
+    <p class="muted" style="margin:0">Idées, sélection, incubation, financements et partenariats du CIAT.</p>
+  </div>
+  <div class="row no-print">
+    <a class="btn btn-ghost btn-sm" href="{% url 'pilotage:export_excel' %}?{{ qs }}">Excel</a>
+    <a class="btn btn-ghost btn-sm" href="{% url 'pilotage:export_pdf' %}?{{ qs }}">PDF</a>
+    <a class="btn btn-sm" href="{% url 'pilotage:assistant' %}">Interroger les données</a>
+  </div>
+</div>
+
+{% include "_filtres.html" %}
+
+{% if not k.idees %}
+  <div class="card vide" style="margin-top:16px"><h2>Aucun projet ne correspond à ces filtres</h2><a class="btn" href="?">Voir toutes les données</a></div>
+{% else %}
+<div class="grid grid-4" style="margin-top:16px">
+  <div class="card kpi"><div class="val">{{ k.idees|nombre }}</div><div class="lib">Idées reçues</div><div class="sous">{{ k.preselectionnes }} présélectionnées ({{ k.taux_preselection|nombre }} %)</div></div>
+  <div class="card kpi"><div class="val">{{ k.selectionnes }}</div><div class="lib">Projets incubés</div><div class="sous">Taux de sélection {{ k.taux_selection|nombre }} %</div></div>
+  <div class="card kpi"><div class="val">{{ k.prototypes }}</div><div class="lib">Prototypes réalisés</div><div class="sous">{{ k.taux_prototype|nombre }} % des incubés</div></div>
+  <div class="card kpi"><div class="val">{{ k.taux_reussite|nombre }} %</div><div class="lib">Taux de réussite</div><div class="sous">{{ k.sortis }} sortis · {{ k.abandons }} abandons · {{ k.en_incubation }} en cours</div></div>
+  <div class="card kpi"><div class="val">{{ k.montant_obtenu|fcfa }}</div><div class="lib">Financements obtenus</div><div class="sous">{{ k.projets_finances }} projets financés · {{ k.montant_demande|fcfa }} en attente</div></div>
+  <div class="card kpi {% if k.taux_retard >= 30 %}alerte{% endif %}"><div class="val">{{ k.taux_retard|nombre }} %</div><div class="lib">Jalons en retard</div><div class="sous">{{ k.projets_en_retard }} projet(s) en cours avec un retard</div></div>
+  <div class="card kpi"><div class="val">{{ k.partenariats_actifs }}</div><div class="lib">Partenariats actifs</div><div class="sous">{{ k.partenariats_projets }} liés à des projets</div></div>
+  <div class="card kpi"><div class="val">{{ k.part_femmes|nombre }} %</div><div class="lib">Porteuses de projets</div><div class="sous">Sélection : {{ k.taux_selection_femmes|nombre }} % (F) · {{ k.taux_selection_hommes|nombre }} % (H)</div></div>
+</div>
+
+{% if faits %}
+<div class="card faits" style="margin-top:16px">
+  <h3>Faits marquants</h3>
+  <ul>{% for f in faits %}<li>{{ f }}</li>{% endfor %}</ul>
+</div>
+{% endif %}
+
+<div class="grid grid-2" style="margin-top:16px">
+  <div class="card"><div class="carte-titre"><h3>Parcours des projets</h3><button class="btn-png" data-png="g-entonnoir">PNG</button></div>
+    <p class="aide">De l'idée reçue au projet lancé.</p><div class="chart-box"><canvas id="g-entonnoir"></canvas></div></div>
+  <div class="card"><div class="carte-titre"><h3>Comparaison des cohortes</h3><button class="btn-png" data-png="g-cohortes">PNG</button></div>
+    <p class="aide">Cliquez sur une cohorte pour filtrer.</p><div class="chart-box"><canvas id="g-cohortes"></canvas></div></div>
+  <div class="card"><div class="carte-titre"><h3>Évolution des taux par cohorte</h3><button class="btn-png" data-png="g-taux">PNG</button></div>
+    <p class="aide">Cohorte 2026 en cours, 2027 en évaluation.</p><div class="chart-box"><canvas id="g-taux"></canvas></div></div>
+  <div class="card"><div class="carte-titre"><h3>Répartition par domaine</h3><button class="btn-png" data-png="g-domaines">PNG</button></div>
+    <p class="aide">Cliquez sur un domaine pour filtrer.</p><div class="chart-box"><canvas id="g-domaines"></canvas></div></div>
+  <div class="card"><div class="carte-titre"><h3>Répartition par genre</h3><button class="btn-png" data-png="g-genre">PNG</button></div>
+    <p class="aide">Genre du porteur principal.</p><div class="chart-box"><canvas id="g-genre"></canvas></div></div>
+  <div class="card"><div class="carte-titre"><h3>Jalons et retards par domaine</h3><button class="btn-png" data-png="g-retards">PNG</button></div>
+    <p class="aide">Trié du domaine le plus en retard au moins en retard.</p><div class="chart-box"><canvas id="g-retards"></canvas></div></div>
+  <div class="card"><div class="carte-titre"><h3>Financements obtenus par type</h3><button class="btn-png" data-png="g-financements">PNG</button></div>
+    <p class="aide">Montants en FCFA.</p><div class="chart-box"><canvas id="g-financements"></canvas></div></div>
+  <div class="card"><div class="carte-titre"><h3>Filière ISEP d'origine des porteurs</h3><button class="btn-png" data-png="g-filieres">PNG</button></div>
+    <p class="aide">{{ k.idees_isep }} idées sur {{ k.idees }} ({{ k.part_isep|nombre }} %) viennent d'apprenants ou de diplômés de l'ISEP. Couleur claire : TIC · foncée : Automobile. Cliquez pour filtrer.</p><div class="chart-box"><canvas id="g-filieres"></canvas></div></div>
+  <div class="card"><div class="carte-titre"><h3>Origine géographique des porteurs</h3><button class="btn-png" data-png="g-regions">PNG</button></div>
+    <p class="aide">Cliquez sur une région pour filtrer.</p><div class="chart-box"><canvas id="g-regions"></canvas></div></div>
+</div>
+
+<div class="grid grid-2" style="margin-top:16px">
+  <div class="card">
+    <div class="carte-titre"><h3>Projets en retard</h3><a class="small" href="{% url 'pilotage:projets' %}?statut=incubation">Tous les projets en cours →</a></div>
+    <p class="aide">Projets en incubation avec au moins un jalon échu non réalisé.</p>
+    <div class="table-wrap"><table>
+      <tr><th>Projet</th><th>Jalon</th><th>Retard</th></tr>
+      {% for r in retards %}
+        <tr><td><a href="{% url 'pilotage:fiche_projet' r.projet.code %}">{{ r.projet.titre }}</a><br><span class="muted small">{{ r.projet.code }} · {{ r.projet.domaine_court }}</span></td>
+          <td class="small">{{ r.jalon }}{% if r.nb > 1 %} <span class="muted">(+{{ r.nb|add:"-1" }})</span>{% endif %}</td>
+          <td><span class="badge badge-rouge">{{ r.jours }} j</span></td></tr>
+      {% empty %}<tr><td colspan="3" class="muted small">Aucun projet en retard sur ce périmètre.</td></tr>{% endfor %}
+    </table></div>
+  </div>
+  <div class="card">
+    <div class="carte-titre"><h3>Idées déposées par mois</h3><button class="btn-png" data-png="g-depots">PNG</button></div>
+    <p class="aide">Rythme des appels à projets.</p><div class="chart-box"><canvas id="g-depots"></canvas></div>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
+{% block scripts %}
+{% if k.idees %}
+<script src="{% static 'js/chart.umd.min.js' %}"></script>
+<script src="{% static 'js/graphiques.js' %}"></script>
+<script>
+const S = {{ series_json|safe }};
+CIAT.entonnoir("g-entonnoir", S.entonnoir);
+CIAT.cohortes("g-cohortes", S.cohortes);
+CIAT.taux("g-taux", S.cohortes);
+CIAT.domaines("g-domaines", S.domaines);
+CIAT.genre("g-genre", S.genre);
+CIAT.retards("g-retards", S.jalons_domaine);
+CIAT.financements("g-financements", S.financements_type);
+CIAT.regions("g-regions", S.regions);
+CIAT.filieres("g-filieres", S.filieres);
+CIAT.depots("g-depots", S.depots_mois);
+</script>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,171 @@
+code;titre;domaine;cohorte;porteur;nb_membres;date_depot;preselectionne;selectionne;score_comite;date_selection;date_prototype;statut;progression;mentor;emplois_crees
+CIAT-2024-001;Paiement mobile des tontines;tic;2024;P-0001;3;2023-11-18;1;0;69;;2025-06-02;non_retenu;0;;0
+CIAT-2024-002;Formation aux métiers du solaire;education;2024;P-0002;5;2023-11-25;0;0;;;;non_retenu;0;;0
+CIAT-2024-003;Kit solaire pour boutiques;energie;2024;P-0003;3;2023-11-19;1;1;90;2024-01-25;2024-04-26;sorti;100;M. Thiam (énergie);2
+CIAT-2024-004;Application de suivi scolaire;tic;2024;P-0004;3;2023-12-12;0;0;;;;non_retenu;0;;0
+CIAT-2024-005;Jus de baobab pasteurisé;agriculture;2024;P-0005;2;2023-12-15;0;0;;;;non_retenu;0;;0
+CIAT-2024-006;Cartographie des déchets;tic;2024;P-0006;2;2023-11-06;1;1;92;2024-01-17;2024-04-29;sorti;100;Mme Ba (marketing);5
+CIAT-2024-007;Aliment de bétail local;agriculture;2024;P-0007;2;2023-11-18;1;0;50;;;non_retenu;0;;0
+CIAT-2024-008;Compost à base de typha;agriculture;2024;P-0008;3;2023-12-03;0;0;;;;non_retenu;0;;0
+CIAT-2024-009;Bissap en poudre;agriculture;2024;P-0009;3;2023-12-01;1;0;77;;;non_retenu;0;;0
+CIAT-2024-010;Pompe solaire pour maraîchers;energie;2024;P-0010;5;2023-11-19;1;0;62;;;non_retenu;0;;0
+CIAT-2024-011;Kits de sciences pour collèges;education;2024;P-0011;3;2023-11-13;1;1;90;2024-01-16;;abandonne;20;M. Thiam (énergie);0
+CIAT-2024-012;Foyer amélioré au charbon de typha;energie;2024;P-0012;3;2023-12-05;1;0;69;;;non_retenu;0;;0
+CIAT-2024-013;Services de livraison du dernier kilomètre;services;2024;P-0013;2;2023-11-05;1;0;52;;;non_retenu;0;;0
+CIAT-2024-014;Compost à base de typha;agriculture;2024;P-0014;2;2023-12-14;0;0;;;;non_retenu;0;;0
+CIAT-2024-015;Chatbot santé en wolof;tic;2024;P-0015;4;2023-11-21;1;1;;2024-01-18;;abandonne;80;M. Kane (numérique);0
+CIAT-2024-016;Paiement mobile des tontines;tic;2024;P-0016;1;2023-12-09;1;1;91;2024-01-16;2024-05-15;sorti;100;M. Diagne (ingénieur);4
+CIAT-2024-017;Biodigesteur familial;energie;2024;P-0017;1;2023-12-04;0;0;;;;non_retenu;0;;0
+CIAT-2024-018;Aliment de bétail local;agriculture;2024;P-0018;2;2023-12-02;1;0;49;;;non_retenu;0;;0
+CIAT-2024-019;Cours de soutien en ligne;education;2024;P-0019;4;2023-12-13;1;0;64;;;non_retenu;0;;0
+CIAT-2024-020;Fabrication de masques réutilisables;sante;2024;P-0020;2;2023-11-29;1;0;64;;;non_retenu;0;;0
+CIAT-2024-021;Farine enrichie au mil;agriculture;2024;P-0021;1;2023-12-13;1;1;86;2024-01-21;;abandonne;20;M. Faye (entrepreneur);0
+CIAT-2024-022;Savon antiseptique au neem;sante;2024;P-0022;5;2023-11-27;1;0;68;;;non_retenu;0;;0
+CIAT-2024-023;Services de livraison du dernier kilomètre;services;2024;P-0023;3;2023-12-07;1;1;80;2024-01-11;2024-05-01;sorti;100;M. Thiam (énergie);6
+CIAT-2024-024;Batteuse de riz mobile;mecanique;2024;P-0024;1;2023-11-05;1;1;84;2024-01-15;;abandonne;80;M. Diagne (ingénieur);0
+CIAT-2024-025;Foyer amélioré au charbon de typha;energie;2024;P-0025;1;2023-12-10;1;0;50;;;non_retenu;0;;0
+CIAT-2024-026;Maraîchage hors-sol;agriculture;2024;P-0026;3;2023-11-04;0;0;;;;non_retenu;0;;0
+CIAT-2024-027;Audit énergétique PME;energie;2024;P-0027;2;2023-11-17;1;1;82;2024-01-26;2024-05-01;sorti;100;Mme Ndiaye (finance);6
+CIAT-2024-028;Plateforme de covoiturage Diamniadio;tic;2024;P-0028;3;2023-12-11;0;0;;;;non_retenu;0;;0
+CIAT-2024-029;Suivi des femmes enceintes par SMS;sante;2024;P-0029;1;2023-11-17;0;0;;;;non_retenu;0;;0
+CIAT-2024-030;Détection de maladies du manioc;tic;2024;P-0030;1;2023-12-14;0;0;;;;non_retenu;0;;0
+CIAT-2024-031;Formation aux métiers du solaire;education;2024;P-0031;2;2023-11-19;1;0;75;;;non_retenu;0;;0
+CIAT-2024-032;Plateforme de covoiturage Diamniadio;tic;2024;P-0032;1;2023-12-12;1;1;90;2024-01-11;2024-04-26;sorti;100;M. Diagne (ingénieur);4
+CIAT-2024-033;Agenda partagé pour GIE;tic;2024;P-0033;3;2023-11-29;0;0;;;;non_retenu;0;;0
+CIAT-2024-034;Pompe solaire pour maraîchers;energie;2024;P-0034;2;2023-11-29;0;0;;;;non_retenu;0;;0
+CIAT-2024-035;Farine enrichie au mil;agriculture;2024;P-0035;2;2023-12-07;0;0;;;;non_retenu;0;;0
+CIAT-2024-036;Laverie solidaire;services;2024;P-0036;3;2023-11-03;1;0;67;;;non_retenu;0;;0
+CIAT-2025-001;Foyer amélioré au charbon de typha;energie;2025;P-0037;2;2024-11-15;0;0;;;;non_retenu;0;;0
+CIAT-2025-002;Biodigesteur familial;energie;2025;P-0038;4;2024-12-03;0;0;;;;non_retenu;0;;0
+CIAT-2025-003;Compost à base de typha;agriculture;2025;P-0039;2;2024-11-13;0;0;;;;non_retenu;0;;0
+CIAT-2025-004;Bissap en poudre;agriculture;2025;P-0040;2;2024-12-06;0;0;;;;non_retenu;0;;0
+CIAT-2025-005;Kit solaire pour boutiques;energie;2025;P-0041;2;2024-12-10;0;0;;;;non_retenu;0;;0
+CIAT-2025-006;Lampes solaires recyclées;energie;2025;P-0042;3;2024-12-15;1;1;90;2025-01-22;;abandonne;80;Mme Ndiaye (finance);0
+CIAT-2025-007;Agenda partagé pour GIE;tic;2025;P-0043;2;2024-11-30;0;0;;;;non_retenu;0;;0
+CIAT-2025-008;Cartographie des déchets;tic;2025;P-0044;5;2024-12-09;1;0;59;;;non_retenu;0;;0
+CIAT-2025-009;Séchoir solaire de mangues;agriculture;2025;P-0045;4;2024-12-08;1;0;67;;;non_retenu;0;;0
+CIAT-2025-010;Gestion de stock pour boutiques;tic;2025;P-0046;3;2024-11-12;0;0;;;;non_retenu;0;;0
+CIAT-2025-011;Laverie solidaire;services;2025;P-0047;4;2024-11-14;1;0;59;;;non_retenu;0;;0
+CIAT-2025-012;Marketplace artisans;tic;2025;P-0048;3;2024-11-22;0;0;;;;non_retenu;0;;0
+CIAT-2025-013;Foyer amélioré au charbon de typha;energie;2025;P-0049;3;2024-12-06;0;0;;;;non_retenu;0;;0
+CIAT-2025-014;Atelier de réparation de motopompes;mecanique;2025;P-0050;2;2024-11-23;1;0;57;;;non_retenu;0;;0
+CIAT-2025-015;Formation aux métiers du solaire;education;2025;P-0051;5;2024-12-08;0;0;;;;non_retenu;0;;0
+CIAT-2025-016;Cartographie des déchets;tic;2025;P-0052;1;2024-11-24;0;0;;;;non_retenu;0;;0
+CIAT-2025-017;Décortiqueuse de fonio;mecanique;2025;P-0053;3;2024-11-06;1;1;81;2025-01-14;;abandonne;20;M. Kane (numérique);0
+CIAT-2025-018;Jus de baobab pasteurisé;agriculture;2025;P-0054;3;2024-11-04;1;1;74;2025-01-10;2025-05-04;sorti;100;M. Faye (entrepreneur);1
+CIAT-2025-019;Batteuse de riz mobile;mecanique;2025;P-0055;3;2024-11-29;1;0;58;;;non_retenu;0;;0
+CIAT-2025-020;Conversion de motos Jakarta à l'électrique;mecanique;2025;P-0056;5;2024-12-08;1;0;68;;;non_retenu;0;;0
+CIAT-2025-021;Farine enrichie au mil;agriculture;2025;P-0057;5;2024-12-14;0;0;;;;non_retenu;0;;0
+CIAT-2025-022;Remorque agricole légère;mecanique;2025;P-0058;2;2024-11-27;0;0;;;;non_retenu;0;;0
+CIAT-2025-023;Cartographie des déchets;tic;2025;P-0059;3;2024-11-19;1;0;51;;;non_retenu;0;;0
+CIAT-2025-024;Agenda partagé pour GIE;tic;2025;P-0060;2;2024-12-08;1;1;87;2025-01-13;2025-05-02;sorti;100;M. Diagne (ingénieur);6
+CIAT-2025-025;Aliment de bétail local;agriculture;2025;P-0061;5;2024-11-23;1;0;53;;;non_retenu;0;;0
+CIAT-2025-026;Transformation de l'arachide en pâte;agriculture;2025;P-0062;1;2024-12-16;1;1;90;2025-01-14;2025-04-30;sorti;100;M. Kane (numérique);1
+CIAT-2025-027;Gestion de stock pour boutiques;tic;2025;P-0063;5;2024-11-18;1;1;86;2025-01-23;2025-04-27;sorti;100;Mme Ndiaye (finance);3
+CIAT-2025-028;Audit énergétique PME;energie;2025;P-0064;5;2024-11-12;1;0;65;;;non_retenu;0;;0
+CIAT-2025-029;Biodigesteur familial;energie;2025;P-0065;4;2024-11-12;1;1;80;2025-01-21;2025-05-03;sorti;100;M. Kane (numérique);3
+CIAT-2025-030;Conservation de l'oignon;agriculture;2025;P-0066;3;2024-12-06;1;1;75;2025-01-10;;abandonne;80;Mme Ba (marketing);0
+CIAT-2025-031;Services de livraison du dernier kilomètre;services;2025;P-0067;5;2024-11-11;1;1;91;2025-01-11;;abandonne;20;M. Faye (entrepreneur);0
+CIAT-2025-032;Détection de maladies du manioc;tic;2025;P-0068;2;2024-11-09;0;0;;;;non_retenu;0;;0
+CIAT-2025-033;Formation aux métiers du solaire;education;2025;P-0069;3;2024-12-14;1;1;90;2025-01-14;2025-04-25;abandonne;60;Mme Ba (marketing);0
+CIAT-2025-034;Pommade à base de plantes locales;sante;2025;P-0070;2;2024-12-15;1;0;62;;;non_retenu;0;;0
+CIAT-2025-035;Séchoir solaire de mangues;agriculture;2025;P-0071;2;2024-12-05;1;1;86;2025-01-21;2025-05-02;sorti;100;Mme Ba (marketing);2
+CIAT-2025-036;Jus de baobab pasteurisé;agriculture;2025;P-0072;3;2024-12-11;1;0;61;;;non_retenu;0;;0
+CIAT-2025-037;Remorque agricole légère;mecanique;2025;P-0073;1;2024-11-27;1;0;61;;;non_retenu;0;;0
+CIAT-2025-038;Conservation de l'oignon;agriculture;2025;P-0074;1;2024-11-29;0;0;;;;non_retenu;0;;0
+CIAT-2025-039;Billetterie de bus interurbains;tic;2025;P-0075;1;2024-11-07;0;0;;;;non_retenu;0;;0
+CIAT-2025-040;Formation aux métiers du solaire;education;2025;P-0076;2;2024-11-18;1;0;55;;;non_retenu;0;;0
+CIAT-2025-041;Marketplace artisans;tic;2025;P-0077;3;2024-11-20;1;1;75;2025-01-15;2025-04-29;sorti;100;M. Faye (entrepreneur);3
+CIAT-2025-042;Formation aux métiers du solaire;education;2025;P-0078;2;2024-11-05;1;0;72;;;non_retenu;0;;0
+CIAT-2025-043;Conservation de l'oignon;agriculture;2025;P-0079;3;2024-12-11;1;0;62;;;non_retenu;0;;0
+CIAT-2025-044;Jus de baobab pasteurisé;agriculture;2025;P-0080;2;2024-12-03;1;1;90;2025-01-14;2025-04-25;sorti;100;M. Diagne (ingénieur);5
+CIAT-2025-045;Conversion de motos Jakarta à l'électrique;mecanique;2025;P-0081;1;2024-11-09;0;0;;;;non_retenu;0;;0
+CIAT-2025-046;Détection de maladies du manioc;tic;2025;P-0082;2;2024-12-03;1;0;50;;;non_retenu;0;;0
+CIAT-2025-047;Audit énergétique PME;energie;2025;P-0083;5;2024-11-17;1;1;77;2025-01-13;2025-04-27;sorti;100;M. Diagne (ingénieur);6
+CIAT-2025-048;Application de suivi scolaire;tic;2025;P-0084;2;2024-12-01;0;0;;;;non_retenu;0;;0
+CIAT-2025-049;Cartographie des déchets;tic;2025;P-0085;1;2024-11-27;0;0;;;;non_retenu;0;;0
+CIAT-2025-050;Kits de sciences pour collèges;education;2025;P-0086;5;2024-12-16;0;0;;;;non_retenu;0;;0
+CIAT-2025-051;Pommade à base de plantes locales;sante;2025;P-0087;3;2024-11-17;0;0;;;;non_retenu;0;;0
+CIAT-2025-052;Maraîchage hors-sol;agriculture;2025;P-0088;2;2024-12-01;0;0;;;;non_retenu;0;;0
+CIAT-2026-001;Gestion de stock pour boutiques;tic;2026;P-0089;3;2026-01-03;0;0;;;;non_retenu;0;;0
+CIAT-2026-002;Lampes solaires recyclées;energie;2026;P-0090;3;2026-01-08;1;1;89;2026-05-08;2026-08-27;incubation;40;M. Faye (entrepreneur);0
+CIAT-2026-003;Marketplace artisans;tic;2026;P-0091;3;2026-01-06;0;0;;;;non_retenu;0;;0
+CIAT-2026-004;Laverie solidaire;services;2026;P-0092;2;2026-01-08;1;0;52;;;non_retenu;0;;0
+CIAT-2026-005;Laverie solidaire;services;2026;P-0093;4;2025-12-11;0;0;;;;non_retenu;0;;0
+CIAT-2026-006;Pompe solaire pour maraîchers;energie;2026;P-0094;2;2026-01-14;0;0;;;;non_retenu;0;;0
+CIAT-2026-007;Transformation de l'arachide en pâte;agriculture;2026;P-0095;4;2025-11-29;0;0;;;;non_retenu;0;;0
+CIAT-2026-008;Kits de sciences pour collèges;education;2026;P-0096;3;2025-12-04;1;1;88;2026-05-09;2026-09-22;abandonne;40;M. Thiam (énergie);0
+CIAT-2026-009;Plateforme de stages;education;2026;P-0097;3;2025-11-29;1;0;57;;;non_retenu;0;;0
+CIAT-2026-010;Cartographie des déchets;tic;2026;P-0098;2;2025-12-20;1;1;80;2026-05-15;;abandonne;20;M. Faye (entrepreneur);0
+CIAT-2026-011;Kit solaire pour boutiques;energie;2026;P-0099;2;2025-12-22;1;0;51;;;non_retenu;0;;0
+CIAT-2026-012;Laverie solidaire;services;2026;P-0100;5;2025-11-23;0;0;;;;non_retenu;0;;0
+CIAT-2026-013;Détection de maladies du manioc;tic;2026;P-0101;3;2025-12-03;0;0;;;;non_retenu;0;;0
+CIAT-2026-014;Aliment de bétail local;agriculture;2026;P-0102;2;2026-01-10;0;0;;;;non_retenu;0;;0
+CIAT-2026-015;Séchoir solaire de mangues;agriculture;2026;P-0103;3;2025-11-09;1;1;79;2026-05-16;2026-08-29;incubation;60;Mme Ndiaye (finance);0
+CIAT-2026-016;Biodigesteur familial;energie;2026;P-0104;5;2025-11-18;1;1;82;2026-05-08;;abandonne;20;M. Faye (entrepreneur);0
+CIAT-2026-017;Irrigation goutte-à-goutte connectée;agriculture;2026;P-0105;3;2026-01-07;0;0;;;;non_retenu;0;;0
+CIAT-2026-018;Détection de maladies du manioc;tic;2026;P-0106;2;2025-12-14;1;1;81;2026-05-12;2026-08-20;incubation;80;M. Thiam (énergie);0
+CIAT-2026-019;Conciergerie pour PME;services;2026;P-0107;3;2026-01-14;0;0;;;;non_retenu;0;;0
+CIAT-2026-020;Billetterie de bus interurbains;tic;2026;P-0108;2;2025-11-06;1;0;66;;;non_retenu;0;;0
+CIAT-2026-021;Pompe solaire pour maraîchers;energie;2026;P-0109;4;2025-12-21;1;1;92;2026-05-20;2026-08-21;incubation;60;M. Thiam (énergie);0
+CIAT-2026-022;Compost à base de typha;agriculture;2026;P-0110;3;2025-11-29;0;0;;;;non_retenu;0;;0
+CIAT-2026-023;Détection de maladies du manioc;tic;2026;P-0111;2;2026-01-13;0;0;;;;non_retenu;0;;0
+CIAT-2026-024;Détection de maladies du manioc;tic;2026;P-0112;2;2025-12-06;0;0;;;;non_retenu;0;;0
+CIAT-2026-025;Biodigesteur familial;energie;2026;P-0113;5;2025-12-09;1;0;54;;;non_retenu;0;;0
+CIAT-2026-026;Remorque agricole légère;mecanique;2026;P-0114;2;2025-11-18;1;0;63;;;non_retenu;0;;0
+CIAT-2026-027;Biodigesteur familial;energie;2026;P-0115;1;2025-12-09;1;1;81;2026-05-17;;incubation;60;Mme Ndiaye (finance);0
+CIAT-2026-028;Pommade à base de plantes locales;sante;2026;P-0116;2;2026-01-13;1;0;70;;;non_retenu;0;;0
+CIAT-2026-029;Pièces détachées reconditionnées;mecanique;2026;P-0117;4;2025-12-02;1;0;73;;;non_retenu;0;;0
+CIAT-2026-030;Jus de baobab pasteurisé;agriculture;2026;P-0118;2;2025-12-25;1;0;73;;;non_retenu;0;;0
+CIAT-2026-031;Remorque agricole légère;mecanique;2026;P-0119;2;2025-12-09;1;0;63;;;non_retenu;0;;0
+CIAT-2026-032;Atelier de réparation de motopompes;mecanique;2026;P-0120;2;2025-12-26;0;0;;;;non_retenu;0;;0
+CIAT-2026-033;Services de livraison du dernier kilomètre;services;2026;P-0121;1;2025-11-04;1;1;91;2026-05-07;2026-08-20;abandonne;40;Mme Sall (experte agro);0
+CIAT-2026-034;Détection de maladies du manioc;tic;2026;P-0122;3;2025-11-20;0;0;;;;non_retenu;0;;0
+CIAT-2026-035;Kits de sciences pour collèges;education;2026;P-0123;4;2025-11-26;1;1;89;2026-05-10;2026-08-23;incubation;60;M. Faye (entrepreneur);0
+CIAT-2026-036;Bissap en poudre;agriculture;2026;P-0124;5;2025-12-27;0;0;;;;non_retenu;0;;0
+CIAT-2026-037;Kit solaire pour boutiques;energie;2026;P-0125;2;2025-12-22;1;0;72;;;non_retenu;0;;0
+CIAT-2026-038;Transformation de l'arachide en pâte;agriculture;2026;P-0126;4;2025-12-19;1;1;78;2026-05-19;2026-09-15;incubation;80;Mme Sall (experte agro);0
+CIAT-2026-039;Remorque agricole légère;mecanique;2026;P-0127;4;2025-11-18;1;0;48;;;non_retenu;0;;0
+CIAT-2026-040;Lampes solaires recyclées;energie;2026;P-0128;2;2025-12-31;0;0;;;;non_retenu;0;;0
+CIAT-2026-041;Pièces détachées reconditionnées;mecanique;2026;P-0129;5;2025-12-04;1;1;75;2026-05-11;2026-08-20;incubation;80;Mme Ndiaye (finance);0
+CIAT-2026-042;Atelier mobile de carrosserie;mecanique;2026;P-0130;1;2025-11-10;0;0;;;;non_retenu;0;;0
+CIAT-2026-043;Formation aux métiers du solaire;education;2026;P-0131;3;2025-11-17;1;0;54;;;non_retenu;0;;0
+CIAT-2026-044;Climatisation solaire pour taxis;mecanique;2026;P-0132;3;2025-12-31;0;0;;;;non_retenu;0;;0
+CIAT-2026-045;Kit solaire pour boutiques;energie;2026;P-0133;4;2025-11-30;0;0;;;;non_retenu;0;;0
+CIAT-2026-046;Kit solaire pour boutiques;energie;2026;P-0134;3;2025-11-07;1;1;92;2026-05-20;2026-08-20;incubation;60;M. Kane (numérique);0
+CIAT-2026-047;Cartographie des déchets;tic;2026;P-0135;3;2025-11-13;0;0;;;;non_retenu;0;;0
+CIAT-2026-048;Climatisation solaire pour taxis;mecanique;2026;P-0136;2;2025-12-01;1;0;50;;;non_retenu;0;;0
+CIAT-2026-049;Formation aux métiers du solaire;education;2026;P-0137;3;2025-12-02;0;0;;;;non_retenu;0;;0
+CIAT-2026-050;Séchoir solaire de mangues;agriculture;2026;P-0138;2;2025-11-29;0;0;;;;non_retenu;0;;0
+CIAT-2026-051;Irrigation goutte-à-goutte connectée;agriculture;2026;P-0139;3;2025-11-30;1;1;82;2026-05-08;2026-08-27;incubation;60;Mme Sall (experte agro);0
+CIAT-2026-052;Atelier mobile de carrosserie;mecanique;2026;P-0140;2;2026-01-15;0;0;;;;non_retenu;0;;0
+CIAT-2026-053;Lampes solaires recyclées;energie;2026;P-0141;2;2025-12-08;1;0;68;;;non_retenu;0;;0
+CIAT-2026-054;Séchoir solaire de mangues;agriculture;2026;P-0142;2;2025-12-21;1;0;61;;;non_retenu;0;;0
+CIAT-2026-055;Plateforme de stages;education;2026;P-0143;2;2025-12-01;0;0;;;;non_retenu;0;;0
+CIAT-2026-056;Détection de maladies du manioc;tic;2026;P-0144;2;2025-12-22;0;0;;;;non_retenu;0;;0
+CIAT-2026-057;Irrigation goutte-à-goutte connectée;agriculture;2026;P-0145;1;2025-12-07;0;0;;;;non_retenu;0;;0
+CIAT-2026-058;Détection de maladies du manioc;tic;2026;P-0146;2;2026-01-03;1;0;52;;;non_retenu;0;;0
+CIAT-2026-059;Farine enrichie au mil;agriculture;2026;P-0147;4;2026-01-03;1;1;84;2026-05-10;2026-08-22;incubation;80;M. Kane (numérique);0
+CIAT-2026-060;Gestion de marchés communaux;services;2026;P-0148;3;2026-01-10;1;0;72;;;non_retenu;0;;0
+CIAT-2026-061;Conversion de motos Jakarta à l'électrique;mecanique;2026;P-0149;5;2025-12-13;0;0;;;;non_retenu;0;;0
+CIAT-2026-062;Conciergerie pour PME;services;2026;P-0150;3;2025-12-26;1;0;72;;;non_retenu;0;;0
+CIAT-2026-063;Paiement mobile des tontines;tic;2026;P-0151;2;2026-01-04;0;0;;;;non_retenu;0;;0
+CIAT-2026-064;Pommade à base de plantes locales;sante;2026;P-0152;3;2025-11-26;1;1;92;2026-05-19;2026-10-01;incubation;20;M. Diagne (ingénieur);0
+CIAT-2027-001;Presse à briques de terre;mecanique;2027;P-0153;4;2026-09-27;0;0;;;;evaluation;0;;0
+CIAT-2027-002;Conservation de l'oignon;agriculture;2027;P-0154;5;2026-09-28;0;0;;;;evaluation;0;;0
+CIAT-2027-003;Dispensateur de médicaments;sante;2027;P-0155;1;2026-10-11;0;0;;;;evaluation;0;;0
+CIAT-2027-004;Détection de maladies du manioc;tic;2027;P-0156;3;2026-09-21;0;0;;;;evaluation;0;;0
+CIAT-2027-005;Pompe solaire pour maraîchers;energie;2027;P-0157;4;2026-10-19;0;0;;;;evaluation;0;;0
+CIAT-2027-006;Plateforme de stages;education;2027;P-0158;2;2026-09-29;0;0;;;;evaluation;0;;0
+CIAT-2027-007;Transformation de l'arachide en pâte;agriculture;2027;P-0159;2;2026-10-24;0;0;;;;evaluation;0;;0
+CIAT-2027-008;Lampes solaires recyclées;energie;2027;P-0160;4;2026-09-25;0;0;;;;evaluation;0;;0
+CIAT-2027-009;Pompe solaire pour maraîchers;energie;2027;P-0161;3;2026-10-14;0;0;;;;evaluation;0;;0
+CIAT-2027-010;Foyer amélioré au charbon de typha;energie;2027;P-0162;1;2026-09-24;0;0;;;;evaluation;0;;0
+CIAT-2027-011;Pommade à base de plantes locales;sante;2027;P-0163;3;2026-09-30;0;0;;;;evaluation;0;;0
+CIAT-2027-012;Application de suivi scolaire;tic;2027;P-0164;2;2026-10-18;0;0;;;;evaluation;0;;0
+CIAT-2027-013;Conversion de motos Jakarta à l'électrique;mecanique;2027;P-0165;3;2026-09-24;0;0;;;;evaluation;0;;0
+CIAT-2027-014;Marketplace artisans;tic;2027;P-0166;3;2026-10-13;0;0;;;;evaluation;0;;0
+CIAT-2027-015;Biodigesteur familial;energie;2027;P-0167;4;2026-09-28;0;0;;;;evaluation;0;;0
+CIAT-2027-016;Formation aux métiers du solaire;education;2027;P-0168;4;2026-09-25;0;0;;;;evaluation;0;;0
+CIAT-2027-017;Billetterie de bus interurbains;tic;2027;P-0169;4;2026-09-28;0;0;;;;evaluation;0;;0
+CIAT-2027-018;Compost à base de typha;agriculture;2027;P-0170;2;2026-09-23;0;0;;;;evaluation;0;;0

@@ -1,0 +1,201 @@
+projet;titre;echeance;date_realisation
+CIAT-2024-006;Étude de marché validée;2024-03-06;2024-03-04
+CIAT-2024-006;Prototype v1;2024-05-05;2024-04-29
+CIAT-2024-006;Tests utilisateurs;2024-06-04;2024-05-26
+CIAT-2024-006;Modèle économique finalisé;2024-07-04;2024-07-04
+CIAT-2024-006;Pitch final (demo day);2024-07-29;2024-07-20
+CIAT-2024-016;Étude de marché validée;2024-03-06;2024-03-03
+CIAT-2024-016;Prototype v1;2024-05-05;2024-05-15
+CIAT-2024-016;Tests utilisateurs;2024-06-04;2024-06-03
+CIAT-2024-016;Modèle économique finalisé;2024-07-04;2024-06-25
+CIAT-2024-016;Pitch final (demo day);2024-07-29;2024-07-22
+CIAT-2024-003;Étude de marché validée;2024-03-06;2024-02-28
+CIAT-2024-003;Prototype v1;2024-05-05;2024-04-26
+CIAT-2024-003;Tests utilisateurs;2024-06-04;2024-05-28
+CIAT-2024-003;Modèle économique finalisé;2024-07-04;2024-06-26
+CIAT-2024-003;Pitch final (demo day);2024-07-29;2024-07-22
+CIAT-2024-011;Étude de marché validée;2024-03-06;2024-03-03
+CIAT-2024-011;Prototype v1;2024-05-05;
+CIAT-2024-011;Tests utilisateurs;2024-06-04;
+CIAT-2024-011;Modèle économique finalisé;2024-07-04;
+CIAT-2024-011;Pitch final (demo day);2024-07-29;
+CIAT-2024-032;Étude de marché validée;2024-03-06;2024-02-29
+CIAT-2024-032;Prototype v1;2024-05-05;2024-04-26
+CIAT-2024-032;Tests utilisateurs;2024-06-04;2024-05-31
+CIAT-2024-032;Modèle économique finalisé;2024-07-04;2024-08-02
+CIAT-2024-032;Pitch final (demo day);2024-07-29;2024-07-27
+CIAT-2024-015;Étude de marché validée;2024-03-06;2024-02-28
+CIAT-2024-015;Prototype v1;2024-05-05;
+CIAT-2024-015;Tests utilisateurs;2024-06-04;2024-05-30
+CIAT-2024-015;Modèle économique finalisé;2024-07-04;2024-07-14
+CIAT-2024-015;Pitch final (demo day);2024-07-29;2024-07-26
+CIAT-2024-021;Étude de marché validée;2024-03-06;2024-02-29
+CIAT-2024-021;Prototype v1;2024-05-05;
+CIAT-2024-021;Tests utilisateurs;2024-06-04;
+CIAT-2024-021;Modèle économique finalisé;2024-07-04;
+CIAT-2024-021;Pitch final (demo day);2024-07-29;
+CIAT-2024-024;Étude de marché validée;2024-03-06;2024-02-28
+CIAT-2024-024;Prototype v1;2024-05-05;
+CIAT-2024-024;Tests utilisateurs;2024-06-04;2024-05-28
+CIAT-2024-024;Modèle économique finalisé;2024-07-04;2024-08-14
+CIAT-2024-024;Pitch final (demo day);2024-07-29;2024-09-09
+CIAT-2024-027;Étude de marché validée;2024-03-06;2024-03-30
+CIAT-2024-027;Prototype v1;2024-05-05;2024-05-01
+CIAT-2024-027;Tests utilisateurs;2024-06-04;2024-06-01
+CIAT-2024-027;Modèle économique finalisé;2024-07-04;
+CIAT-2024-027;Pitch final (demo day);2024-07-29;2024-07-26
+CIAT-2024-023;Étude de marché validée;2024-03-06;2024-03-01
+CIAT-2024-023;Prototype v1;2024-05-05;2024-05-01
+CIAT-2024-023;Tests utilisateurs;2024-06-04;2024-06-24
+CIAT-2024-023;Modèle économique finalisé;2024-07-04;2024-07-02
+CIAT-2024-023;Pitch final (demo day);2024-07-29;2024-07-25
+CIAT-2025-031;Étude de marché validée;2025-03-05;2025-04-11
+CIAT-2025-031;Prototype v1;2025-05-04;
+CIAT-2025-031;Tests utilisateurs;2025-06-03;
+CIAT-2025-031;Modèle économique finalisé;2025-07-03;
+CIAT-2025-031;Pitch final (demo day);2025-07-28;
+CIAT-2025-006;Étude de marché validée;2025-03-05;2025-03-23
+CIAT-2025-006;Prototype v1;2025-05-04;
+CIAT-2025-006;Tests utilisateurs;2025-06-03;2025-05-31
+CIAT-2025-006;Modèle économique finalisé;2025-07-03;2025-06-23
+CIAT-2025-006;Pitch final (demo day);2025-07-28;2025-08-14
+CIAT-2025-026;Étude de marché validée;2025-03-05;2025-02-26
+CIAT-2025-026;Prototype v1;2025-05-04;2025-04-30
+CIAT-2025-026;Tests utilisateurs;2025-06-03;2025-06-02
+CIAT-2025-026;Modèle économique finalisé;2025-07-03;2025-07-03
+CIAT-2025-026;Pitch final (demo day);2025-07-28;2025-07-18
+CIAT-2025-033;Étude de marché validée;2025-03-05;2025-02-26
+CIAT-2025-033;Prototype v1;2025-05-04;2025-04-25
+CIAT-2025-033;Tests utilisateurs;2025-06-03;2025-05-30
+CIAT-2025-033;Modèle économique finalisé;2025-07-03;
+CIAT-2025-033;Pitch final (demo day);2025-07-28;
+CIAT-2025-044;Étude de marché validée;2025-03-05;2025-02-23
+CIAT-2025-044;Prototype v1;2025-05-04;2025-04-25
+CIAT-2025-044;Tests utilisateurs;2025-06-03;2025-07-16
+CIAT-2025-044;Modèle économique finalisé;2025-07-03;2025-07-01
+CIAT-2025-044;Pitch final (demo day);2025-07-28;2025-07-18
+CIAT-2025-024;Étude de marché validée;2025-03-05;2025-02-26
+CIAT-2025-024;Prototype v1;2025-05-04;2025-05-02
+CIAT-2025-024;Tests utilisateurs;2025-06-03;
+CIAT-2025-024;Modèle économique finalisé;2025-07-03;2025-08-14
+CIAT-2025-024;Pitch final (demo day);2025-07-28;2025-07-28
+CIAT-2025-027;Étude de marché validée;2025-03-05;2025-02-24
+CIAT-2025-027;Prototype v1;2025-05-04;2025-04-27
+CIAT-2025-027;Tests utilisateurs;2025-06-03;2025-05-27
+CIAT-2025-027;Modèle économique finalisé;2025-07-03;2025-06-23
+CIAT-2025-027;Pitch final (demo day);2025-07-28;2025-07-21
+CIAT-2025-035;Étude de marché validée;2025-03-05;2025-03-03
+CIAT-2025-035;Prototype v1;2025-05-04;2025-05-02
+CIAT-2025-035;Tests utilisateurs;2025-06-03;2025-06-25
+CIAT-2025-035;Modèle économique finalisé;2025-07-03;2025-07-03
+CIAT-2025-035;Pitch final (demo day);2025-07-28;2025-07-23
+CIAT-2025-017;Étude de marché validée;2025-03-05;2025-03-03
+CIAT-2025-017;Prototype v1;2025-05-04;
+CIAT-2025-017;Tests utilisateurs;2025-06-03;
+CIAT-2025-017;Modèle économique finalisé;2025-07-03;
+CIAT-2025-017;Pitch final (demo day);2025-07-28;
+CIAT-2025-029;Étude de marché validée;2025-03-05;2025-04-08
+CIAT-2025-029;Prototype v1;2025-05-04;2025-05-03
+CIAT-2025-029;Tests utilisateurs;2025-06-03;
+CIAT-2025-029;Modèle économique finalisé;2025-07-03;2025-07-03
+CIAT-2025-029;Pitch final (demo day);2025-07-28;2025-07-26
+CIAT-2025-047;Étude de marché validée;2025-03-05;2025-02-25
+CIAT-2025-047;Prototype v1;2025-05-04;2025-04-27
+CIAT-2025-047;Tests utilisateurs;2025-06-03;
+CIAT-2025-047;Modèle économique finalisé;2025-07-03;2025-07-03
+CIAT-2025-047;Pitch final (demo day);2025-07-28;2025-08-20
+CIAT-2025-030;Étude de marché validée;2025-03-05;2025-04-11
+CIAT-2025-030;Prototype v1;2025-05-04;
+CIAT-2025-030;Tests utilisateurs;2025-06-03;2025-06-03
+CIAT-2025-030;Modèle économique finalisé;2025-07-03;2025-06-27
+CIAT-2025-030;Pitch final (demo day);2025-07-28;2025-07-24
+CIAT-2025-041;Étude de marché validée;2025-03-05;
+CIAT-2025-041;Prototype v1;2025-05-04;2025-04-29
+CIAT-2025-041;Tests utilisateurs;2025-06-03;2025-05-27
+CIAT-2025-041;Modèle économique finalisé;2025-07-03;2025-07-01
+CIAT-2025-041;Pitch final (demo day);2025-07-28;2025-07-20
+CIAT-2025-018;Étude de marché validée;2025-03-05;2025-02-24
+CIAT-2025-018;Prototype v1;2025-05-04;2025-05-04
+CIAT-2025-018;Tests utilisateurs;2025-06-03;
+CIAT-2025-018;Modèle économique finalisé;2025-07-03;2025-06-23
+CIAT-2025-018;Pitch final (demo day);2025-07-28;2025-09-02
+CIAT-2026-021;Étude de marché validée;2026-07-01;2026-07-23
+CIAT-2026-021;Prototype v1;2026-08-30;2026-08-21
+CIAT-2026-021;Tests utilisateurs;2026-09-29;2026-09-24
+CIAT-2026-021;Modèle économique finalisé;2026-10-29;
+CIAT-2026-021;Pitch final (demo day);2026-11-23;
+CIAT-2026-046;Étude de marché validée;2026-07-01;2026-06-30
+CIAT-2026-046;Prototype v1;2026-08-30;2026-08-20
+CIAT-2026-046;Tests utilisateurs;2026-09-29;2026-09-24
+CIAT-2026-046;Modèle économique finalisé;2026-10-29;
+CIAT-2026-046;Pitch final (demo day);2026-11-23;
+CIAT-2026-064;Étude de marché validée;2026-07-01;
+CIAT-2026-064;Prototype v1;2026-08-30;2026-10-01
+CIAT-2026-064;Tests utilisateurs;2026-09-29;
+CIAT-2026-064;Modèle économique finalisé;2026-10-29;
+CIAT-2026-064;Pitch final (demo day);2026-11-23;
+CIAT-2026-033;Étude de marché validée;2026-07-01;2026-06-30
+CIAT-2026-033;Prototype v1;2026-08-30;2026-08-20
+CIAT-2026-033;Tests utilisateurs;2026-09-29;
+CIAT-2026-033;Modèle économique finalisé;2026-10-29;
+CIAT-2026-033;Pitch final (demo day);2026-11-23;
+CIAT-2026-002;Étude de marché validée;2026-07-01;2026-06-22
+CIAT-2026-002;Prototype v1;2026-08-30;2026-08-27
+CIAT-2026-002;Tests utilisateurs;2026-09-29;
+CIAT-2026-002;Modèle économique finalisé;2026-10-29;
+CIAT-2026-002;Pitch final (demo day);2026-11-23;
+CIAT-2026-035;Étude de marché validée;2026-07-01;2026-06-29
+CIAT-2026-035;Prototype v1;2026-08-30;2026-08-23
+CIAT-2026-035;Tests utilisateurs;2026-09-29;2026-09-25
+CIAT-2026-035;Modèle économique finalisé;2026-10-29;
+CIAT-2026-035;Pitch final (demo day);2026-11-23;
+CIAT-2026-008;Étude de marché validée;2026-07-01;2026-06-22
+CIAT-2026-008;Prototype v1;2026-08-30;2026-09-22
+CIAT-2026-008;Tests utilisateurs;2026-09-29;
+CIAT-2026-008;Modèle économique finalisé;2026-10-29;
+CIAT-2026-008;Pitch final (demo day);2026-11-23;
+CIAT-2026-059;Étude de marché validée;2026-07-01;2026-07-15
+CIAT-2026-059;Prototype v1;2026-08-30;2026-08-22
+CIAT-2026-059;Tests utilisateurs;2026-09-29;2026-09-26
+CIAT-2026-059;Modèle économique finalisé;2026-10-29;2026-10-19
+CIAT-2026-059;Pitch final (demo day);2026-11-23;
+CIAT-2026-016;Étude de marché validée;2026-07-01;2026-07-30
+CIAT-2026-016;Prototype v1;2026-08-30;
+CIAT-2026-016;Tests utilisateurs;2026-09-29;
+CIAT-2026-016;Modèle économique finalisé;2026-10-29;
+CIAT-2026-016;Pitch final (demo day);2026-11-23;
+CIAT-2026-051;Étude de marché validée;2026-07-01;2026-08-05
+CIAT-2026-051;Prototype v1;2026-08-30;2026-08-27
+CIAT-2026-051;Tests utilisateurs;2026-09-29;2026-09-29
+CIAT-2026-051;Modèle économique finalisé;2026-10-29;
+CIAT-2026-051;Pitch final (demo day);2026-11-23;
+CIAT-2026-018;Étude de marché validée;2026-07-01;2026-07-31
+CIAT-2026-018;Prototype v1;2026-08-30;2026-08-20
+CIAT-2026-018;Tests utilisateurs;2026-09-29;2026-09-20
+CIAT-2026-018;Modèle économique finalisé;2026-10-29;2026-10-24
+CIAT-2026-018;Pitch final (demo day);2026-11-23;
+CIAT-2026-027;Étude de marché validée;2026-07-01;2026-06-22
+CIAT-2026-027;Prototype v1;2026-08-30;
+CIAT-2026-027;Tests utilisateurs;2026-09-29;2026-10-15
+CIAT-2026-027;Modèle économique finalisé;2026-10-29;2026-10-21
+CIAT-2026-027;Pitch final (demo day);2026-11-23;
+CIAT-2026-010;Étude de marché validée;2026-07-01;2026-08-07
+CIAT-2026-010;Prototype v1;2026-08-30;
+CIAT-2026-010;Tests utilisateurs;2026-09-29;
+CIAT-2026-010;Modèle économique finalisé;2026-10-29;
+CIAT-2026-010;Pitch final (demo day);2026-11-23;
+CIAT-2026-015;Étude de marché validée;2026-07-01;2026-07-01
+CIAT-2026-015;Prototype v1;2026-08-30;2026-08-29
+CIAT-2026-015;Tests utilisateurs;2026-09-29;2026-09-26
+CIAT-2026-015;Modèle économique finalisé;2026-10-29;
+CIAT-2026-015;Pitch final (demo day);2026-11-23;
+CIAT-2026-038;Étude de marché validée;2026-07-01;2026-06-27
+CIAT-2026-038;Prototype v1;2026-08-30;2026-09-15
+CIAT-2026-038;Tests utilisateurs;2026-09-29;2026-09-26
+CIAT-2026-038;Modèle économique finalisé;2026-10-29;2026-10-22
+CIAT-2026-038;Pitch final (demo day);2026-11-23;
+CIAT-2026-041;Étude de marché validée;2026-07-01;2026-07-14
+CIAT-2026-041;Prototype v1;2026-08-30;2026-08-20
+CIAT-2026-041;Tests utilisateurs;2026-09-29;2026-09-21
+CIAT-2026-041;Modèle économique finalisé;2026-10-29;2026-10-26
+CIAT-2026-041;Pitch final (demo day);2026-11-23;

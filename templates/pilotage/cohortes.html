@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static ciat_tags %}
+{% block title %}Cohortes{% endblock %}
+{% block content %}
+<h1>Comparaison des cohortes</h1>
+<p class="muted">Une cohorte regroupe les idées soumises à l'appel à projets de l'année. Ouvrez une fiche pour la synthèse détaillée.</p>
+<div class="card table-wrap">
+  <table>
+    <tr><th>Cohorte</th><th>Idées</th><th>Incubés</th><th>Taux de sélection</th><th>Prototypes</th><th>Sortis</th><th>Abandons</th><th>Taux de réussite</th><th>Femmes</th><th>Financements</th><th>Retards</th><th></th></tr>
+    {% for c in cohortes %}
+      <tr><td><strong>{{ c.cohorte }}</strong></td><td>{{ c.idees }}</td><td>{{ c.selectionnes }}</td><td>{% if c.taux_selection is not None %}{{ c.taux_selection|nombre }} %{% else %}—{% endif %}</td>
+        <td>{{ c.prototypes }}</td><td>{{ c.sortis }}</td><td>{{ c.abandons }}</td>
+        <td>{% if c.taux_reussite is not None %}{{ c.taux_reussite|nombre }} %{% else %}<span class="muted small">en cours</span>{% endif %}</td>
+        <td>{{ c.part_femmes|nombre }} %</td><td>{{ c.montant_obtenu|fcfa }}</td><td>{{ c.taux_retard|nombre }} %</td>
+        <td><a class="btn btn-ghost btn-sm" href="{% url 'pilotage:fiche_cohorte' c.cohorte %}">Fiche</a></td></tr>
+    {% endfor %}
+  </table>
+</div>
+<p class="small muted">Taux de réussite = sortis / (sortis + abandons). Il n'est définitif que pour les cohortes terminées.</p>
+<div class="grid grid-2" style="margin-top:12px">
+  <div class="card"><div class="carte-titre"><h3>Volumes par cohorte</h3><button class="btn-png" data-png="g-cohortes">PNG</button></div><div class="chart-box"><canvas id="g-cohortes"></canvas></div></div>
+  <div class="card"><div class="carte-titre"><h3>Taux par cohorte</h3><button class="btn-png" data-png="g-taux">PNG</button></div><div class="chart-box"><canvas id="g-taux"></canvas></div></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/chart.umd.min.js' %}"></script>
+<script src="{% static 'js/graphiques.js' %}"></script>
+<script>
+const S = {{ series_json|safe }};
+CIAT.cohortes("g-cohortes", S.cohortes);
+CIAT.taux("g-taux", S.cohortes);
+</script>
+{% endblock %}

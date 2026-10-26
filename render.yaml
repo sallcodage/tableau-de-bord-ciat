@@ -10,7 +10,7 @@ services:
     name: tableau-de-bord-ciat
     runtime: python
     plan: free
-    buildCommand: "./build.sh"
+    buildCommand: "bash build.sh"
     startCommand: "gunicorn config.wsgi:application --timeout 60"
     envVars:
       - key: PYTHON_VERSION

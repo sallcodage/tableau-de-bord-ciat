@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}Accueil{% endblock %}
+{% block content %}
+<div class="accueil">
+  <section class="hero">
+    <div>
+      <span class="eyebrow">CIAT · ISEP Amadou Trawaré de Diamniadio</span>
+      <h1>L'incubateur du CIAT, piloté par les données.</h1>
+      <p class="lead">Suivez chaque projet, de l'idée déposée au lancement : sélection, jalons, retards, financements et partenariats. Posez vos questions en français, l'assistant IA répond à partir des données.</p>
+      <div class="actions">
+        {% if user.is_authenticated %}
+          <a class="btn" href="{% url 'pilotage:dashboard' %}">Ouvrir le tableau de bord</a>
+        {% else %}
+          <a class="btn" href="{% url 'login' %}">Se connecter</a>
+          <a class="btn btn-ghost" href="{% url 'accounts:demande_acces' %}">Demander un accès</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="hero-visual" aria-label="Aperçu de l'application">
+      <div class="apercu">
+        {% for val, lib in chiffres|slice:":2" %}<div><b>{{ val }}</b><span>{{ lib }}</span></div>{% endfor %}
+      </div>
+      <div class="mini-barres" aria-hidden="true"><i style="height:100%"></i><i style="height:72%"></i><i style="height:46%"></i><i style="height:30%"></i><i style="height:20%"></i></div>
+      <div class="bulle user">Quel domaine a obtenu le plus de financements ?</div>
+      <div class="bulle">Réponse calculée sur les données, avec le détail par domaine et le lien vers les projets concernés.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>L'incubateur en chiffres</h2>
+    <p class="muted small">Données de démonstration, calculées en direct par l'application.</p>
+    <div class="grid grid-4 chiffres">
+      {% for val, lib in chiffres %}<div class="card kpi"><div class="val">{{ val }}</div><div class="lib">{{ lib }}</div></div>{% endfor %}
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Ce que permet l'outil</h2>
+    <p class="muted">Un seul endroit pour suivre l'incubateur et préparer les décisions.</p>
+    <div class="grid grid-3">
+      <div class="card feature">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+        <h3>Suivre</h3>
+        <p>Indicateurs clés, entonnoir de sélection, comparaison des cohortes, projets en retard. Filtres par cohorte, domaine, genre, région et filière ISEP.</p>
+      </div>
+      <div class="card feature">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></div>
+        <h3>Demander</h3>
+        <p>L'assistant IA comprend une question en français et la traduit en calcul. Les chiffres viennent toujours de la base, jamais de l'IA.</p>
+      </div>
+      <div class="card feature">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6zM14 2v6h6M9 13h8M9 17h6"/></svg></div>
+        <h3>Décider</h3>
+        <p>Notes de synthèse par cohorte, exports Excel et PDF prêts pour un comité ou un conseil d'administration.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Deux profils, deux usages</h2>
+    <p class="muted">Chaque compte est validé par le CIAT, avec des droits adaptés au rôle.</p>
+    <div class="grid grid-2">
+      <div class="card profil-carte">
+        <span class="badge">Direction</span>
+        <h3 style="margin-top:10px">Décider sur des chiffres fiables</h3>
+        <ul>
+          <li>Tableau de bord, cohortes et fiches projet</li>
+          <li>Données anonymisées : codes porteurs, pas de noms</li>
+          <li>Assistant IA, notes de synthèse, exports</li>
+        </ul>
+      </div>
+      <div class="card profil-carte">
+        <span class="badge badge-vert">Coordination de l'incubateur</span>
+        <h3 style="margin-top:10px">Tenir les données à jour</h3>
+        <ul>
+          <li>Tout l'accès de la direction, avec les noms des porteurs</li>
+          <li>Import CSV et contrôle qualité des données</li>
+          <li>Validation des demandes d'accès</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Le parcours suivi</h2>
+    <p class="muted">Chaque projet est suivi à chaque étape de l'incubation.</p>
+    <ol class="etapes">
+      <li><b>Idée</b>Dépôt à l'appel à projets</li>
+      <li><b>Présélection</b>Dossier complet et dans les domaines prioritaires</li>
+      <li><b>Incubation</b>Retenu par le comité, avec mentor et jalons</li>
+      <li><b>Prototype</b>Première version testée</li>
+      <li><b>Lancement</b>Sortie de l'incubateur, emplois créés</li>
+    </ol>
+  </section>
+
+  {% if not user.is_authenticated %}
+  <section class="bandeau">
+    <div>
+      <h2>Vous travaillez avec le CIAT ?</h2>
+      <p>Demandez un accès : le CIAT valide votre compte et choisit vos droits.</p>
+    </div>
+    <a class="btn" href="{% url 'accounts:demande_acces' %}">Demander un accès</a>
+  </section>
+  {% endif %}
+</div>
+{% endblock %}

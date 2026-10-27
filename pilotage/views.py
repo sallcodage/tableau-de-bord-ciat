@@ -34,6 +34,21 @@ def _contexte_filtres(request):
     }
 
 
+# --------------------------------------------------------------------------- Accueil public
+def accueil(request):
+    """Page publique de présentation. Chiffres agrégés uniquement, aucune donnée nominative."""
+    from django.db.models import Sum
+    from .analyses import fcfa
+    montant = Financement.objects.filter(statut=Financement.Statut.OBTENU).aggregate(t=Sum("montant"))["t"] or 0
+    chiffres = [
+        (Cohorte.objects.count(), "cohortes suivies"),
+        (Projet.objects.count(), "idées de projets"),
+        (Projet.objects.filter(selectionne=True).count(), "projets incubés"),
+        (fcfa(montant), "de financements obtenus"),
+    ]
+    return render(request, "accueil.html", {"chiffres": chiffres})
+
+
 # --------------------------------------------------------------------------- Tableau de bord
 @login_required
 def tableau_de_bord(request):
@@ -206,3 +221,16 @@ def modele_csv(request, nom):
 @login_required
 def methodologie(request):
     return render(request, "pilotage/methodologie.html")
+
+
+def echec_csrf(request, reason=""):
+    """Jeton de sécurité périmé (souvent : connexion avec un autre compte dans un autre onglet).
+    Au lieu de la page 403 technique, on recharge la page avec un message clair."""
+    from django.utils.http import url_has_allowed_host_and_scheme
+
+    messages.warning(request, "Votre session a changé (connexion dans un autre onglet ?). "
+                              "La page a été rechargée : refaites votre action.")
+    retour = request.META.get("HTTP_REFERER", "")
+    if not url_has_allowed_host_and_scheme(retour, allowed_hosts={request.get_host()}):
+        retour = "/"
+    return redirect(retour)

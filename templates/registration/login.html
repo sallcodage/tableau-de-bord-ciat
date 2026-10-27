@@ -5,12 +5,12 @@
 <div class="card" style="max-width:420px;margin:30px auto">
   <h1>Connexion</h1>
   <p class="muted small">Accédez aux analyses de l'incubateur du CIAT.</p>
-  {% if form.non_field_errors %}<div class="alert alert-error">Identifiant ou mot de passe incorrect.</div>{% endif %}
+  {% for e in form.non_field_errors %}<div class="alert {% if 'attente' in e %}alert-info{% else %}alert-error{% endif %}">{{ e }}</div>{% endfor %}
   <form method="post">{% csrf_token %}
     {% for field in form %}{% include "_field.html" %}{% endfor %}
     <input type="hidden" name="next" value="{{ next }}">
     <button class="btn" type="submit" style="width:100%;justify-content:center">Se connecter</button>
   </form>
-  <p class="small muted" style="margin-top:14px">Les comptes sont créés par l'administrateur du CIAT.</p>
+  <p class="small muted" style="margin-top:14px">Pas encore de compte ? <a href="{% url 'accounts:demande_acces' %}">Demander un accès</a> : le CIAT valide chaque demande.</p>
 </div>
 {% endblock %}

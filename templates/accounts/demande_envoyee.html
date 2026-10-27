@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Demande envoyée{% endblock %}
+{% block container_class %}narrow{% endblock %}
+{% block content %}
+<div class="card" style="max-width:520px;margin:30px auto;text-align:center">
+  <h1>Merci {{ prenom }}, votre demande est envoyée.</h1>
+  <p class="muted">Le CIAT va examiner votre demande et choisir vos droits d'accès. Une fois le compte validé, connectez-vous avec le nom d'utilisateur et le mot de passe que vous avez choisis.</p>
+  <p style="margin-top:20px"><a class="btn" href="{% url 'accueil' %}">Retour à l'accueil</a></p>
+</div>
+{% endblock %}

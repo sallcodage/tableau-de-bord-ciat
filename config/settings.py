@@ -82,9 +82,10 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
+CSRF_FAILURE_VIEW = "pilotage.views.echec_csrf"
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "pilotage:dashboard"
-LOGOUT_REDIRECT_URL = "login"
+LOGOUT_REDIRECT_URL = "accueil"
 
 LANGUAGE_CODE = "fr-fr"
 TIME_ZONE = "Africa/Dakar"

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Demander un accès{% endblock %}
+{% block container_class %}narrow{% endblock %}
+{% block content %}
+<div class="card" style="max-width:560px;margin:20px auto">
+  <h1>Demander un accès</h1>
+  <p class="muted small">Votre compte sera actif après validation par le CIAT. Vous pourrez alors vous connecter avec le nom d'utilisateur et le mot de passe choisis ici.</p>
+  {% if form.non_field_errors %}<div class="alert alert-error">{{ form.non_field_errors|join:" " }}</div>{% endif %}
+  <form method="post" novalidate>{% csrf_token %}
+    <div class="grid grid-2" style="gap:0 12px">
+      {% with field=form.first_name %}{% include "_field.html" %}{% endwith %}
+      {% with field=form.last_name %}{% include "_field.html" %}{% endwith %}
+    </div>
+    {% with field=form.email %}{% include "_field.html" %}{% endwith %}
+    {% with field=form.fonction %}{% include "_field.html" %}{% endwith %}
+    {% with field=form.role %}{% include "_field.html" %}{% endwith %}
+    {% with field=form.motif %}{% include "_field.html" %}{% endwith %}
+    {% with field=form.username %}{% include "_field.html" %}{% endwith %}
+    {% with field=form.password1 %}{% include "_field.html" %}{% endwith %}
+    {% with field=form.password2 %}{% include "_field.html" %}{% endwith %}
+    <button class="btn" type="submit" style="width:100%;justify-content:center">Envoyer la demande</button>
+  </form>
+  <p class="small muted" style="margin-top:14px">Déjà un compte ? <a href="{% url 'login' %}">Se connecter</a></p>
+</div>
+{% endblock %}

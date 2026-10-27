@@ -17,6 +17,10 @@ class User(AbstractUser):
 
     role = models.CharField(max_length=20, choices=Role.choices, default=Role.DIRECTION)
     fonction = models.CharField(max_length=120, blank=True)
+    demande_en_attente = models.BooleanField(
+        "Demande d'accès en attente", default=False,
+        help_text="Compte créé par le formulaire public, inactif jusqu'à validation.")
+    motif = models.TextField("Motif de la demande", blank=True)
 
     @property
     def peut_saisir(self):
@@ -29,3 +33,17 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.get_full_name() or self.username
+
+
+def donner_droits(user, role):
+    """Applique un rôle : statut staff et permissions de l'administration pour le coordonnateur."""
+    from django.contrib.auth.models import Permission
+
+    user.role = role
+    user.is_staff = user.is_superuser or role in (User.Role.COORDONNATEUR, User.Role.ADMIN)
+    user.save()
+    if role == User.Role.COORDONNATEUR:
+        user.user_permissions.set(Permission.objects.filter(
+            content_type__app_label="pilotage", codename__regex=r"^(view|add|change)_"))
+    else:
+        user.user_permissions.clear()

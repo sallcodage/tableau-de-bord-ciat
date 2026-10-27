@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Demandes d'accès{% endblock %}
+{% block container_class %}narrow{% endblock %}
+{% block content %}
+<h1>Demandes d'accès</h1>
+<p class="muted">Validez chaque demande avec le rôle adapté. Un compte « Direction » voit les analyses sans les noms des porteurs ; un compte « Coordination » voit les noms et peut importer les données.</p>
+<div class="card">
+  {% for d in demandes %}
+    <div class="demande">
+      <div>
+        <strong>{{ d.get_full_name }}</strong> <span class="muted small">· {{ d.username }}</span><br>
+        <span class="small">{{ d.fonction }} · <a href="mailto:{{ d.email }}">{{ d.email }}</a></span><br>
+        <span class="small muted">Accès souhaité : {{ d.get_role_display }} · demande du {{ d.date_joined|date:"d/m/Y à H:i" }}</span>
+        {% if d.motif %}<p class="small" style="margin:6px 0 0">« {{ d.motif }} »</p>{% endif %}
+      </div>
+      <div>
+        <form method="post" action="{% url 'accounts:traiter_demande' d.pk %}">{% csrf_token %}
+          <label class="sr" for="role-{{ d.pk }}" style="position:absolute;left:-9999px">Rôle accordé</label>
+          <select id="role-{{ d.pk }}" name="role">
+            {% for v, l in roles %}<option value="{{ v }}" {% if v == d.role %}selected{% endif %}>{% if v == 'direction' %}Direction{% else %}Coordination{% endif %}</option>{% endfor %}
+          </select>
+          <button class="btn btn-sm" name="action" value="valider">Valider</button>
+          <button class="btn btn-danger btn-sm" name="action" value="refuser">Refuser</button>
+        </form>
+      </div>
+    </div>
+  {% empty %}
+    <p class="muted" style="margin:0">Aucune demande en attente.</p>
+  {% endfor %}
+</div>
+<p class="small muted" style="margin-top:12px">Pour désactiver ou modifier un compte existant, utilisez l'<a href="/admin/">administration</a>.</p>
+{% endblock %}

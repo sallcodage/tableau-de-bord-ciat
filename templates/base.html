@@ -22,7 +22,7 @@
   {% endif %}
   <header class="topbar">
     <div class="topbar-inner">
-      <a class="brand" href="{% url 'pilotage:dashboard' %}">
+      <a class="brand" href="{% if user.is_authenticated %}{% url 'pilotage:dashboard' %}{% else %}{% url 'accueil' %}{% endif %}">
         <img src="{% static 'img/logo.svg' %}" alt="">
         <span>Pilotage du CIAT<small>ISEP Amadou Trawaré · Diamniadio</small></span>
       </a>
@@ -34,10 +34,16 @@
         <a href="{% url 'pilotage:cohortes' %}" class="{% if 'cohorte' in n %}actif{% endif %}">Cohortes</a>
         <a href="{% url 'pilotage:projets' %}" class="{% if 'projet' in n %}actif{% endif %}">Projets</a>
         <a href="{% url 'pilotage:assistant' %}" class="{% if n == 'assistant' %}actif{% endif %}">Assistant IA</a>
-        {% if user.peut_saisir %}<a href="{% url 'pilotage:donnees' %}" class="{% if n == 'donnees' %}actif{% endif %}">Données</a>{% endif %}
+        {% if user.peut_saisir %}<a href="{% url 'pilotage:donnees' %}" class="{% if n == 'donnees' %}actif{% endif %}">Données</a>
+        <a href="{% url 'accounts:demandes' %}" class="{% if n == 'demandes' %}actif{% endif %}">Accès{% if nb_demandes %} <span class="pastille" aria-label="{{ nb_demandes }} demande(s) en attente">{{ nb_demandes }}</span>{% endif %}</a>{% endif %}
         <a href="{% url 'accounts:profil' %}" class="{% if n == 'profil' %}actif{% endif %}" title="{{ user.get_role_display }}">{{ user.first_name|default:user.username }}</a>
         {% endwith %}
         <form method="post" action="{% url 'logout' %}">{% csrf_token %}<button type="submit">Déconnexion</button></form>
+      </nav>
+      {% else %}
+      <nav class="nav nav-public">
+        <a href="{% url 'accounts:demande_acces' %}">Demander un accès</a>
+        <a href="{% url 'login' %}" class="btn btn-sm">Se connecter</a>
       </nav>
       {% endif %}
     </div>
